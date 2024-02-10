@@ -51,7 +51,9 @@ class SppControllers extends Controller
      */
     public function edit(string $id)
     {
-        
+        $tb_spps = DB::table('tb_spps')->where('tahun', $tahun)->first();
+        $tb_spps = DB::table('tb_spps')->where('nominal', $nominal)->first();
+        return view('spp.edit', compact('spp'));
     }
 
     /**
@@ -59,7 +61,12 @@ class SppControllers extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
+        $query = DB::table('tb_spps')->where('id_spp', $id)->update([
+            'tahun' => $request['tahun'],
+            'nominal' => $request['nominal'],
+    ]);
+
+        return redirect()->route('spp.index')->with(['success'=>'data telah di update']);
     }
 
     /**
@@ -67,6 +74,9 @@ class SppControllers extends Controller
      */
     public function destroy(string $id)
     {
-        
+        $query = DB::table('tb_spps')->where('tahun', $id)->delete();
+        $query = DB::table('tb_spps')->where('nominal', $id)->delete();
+
+        return redirect()->route('spp.index')->with(['success'=>'data telah di hapus']);
     }
 }
