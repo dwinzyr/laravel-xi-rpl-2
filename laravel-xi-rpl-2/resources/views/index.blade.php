@@ -20,8 +20,10 @@
     <a class="nav-link disabled" aria-disabled="true"></a>ini navbar
   </li>
 </ul>
-
+<!-- ini main -->
     @yield('isi')
+    @yield('content')
+    @yield('contentindex')
 
 <!-- footer -->
 footer

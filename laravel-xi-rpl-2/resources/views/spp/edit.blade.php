@@ -1,7 +1,7 @@
 @extends('index')
 @section('content')
 <div>
-    <form action="{{ route('spp.update', $spp->id_spp )}}" method="POST">
+    <form action="{{ route('spp.update', $tb_spps->id )}}" method="POST">
         @csrf
         @method('PUT')
         <div>

@@ -16,4 +16,4 @@
     <br>
     <button>Submit</button>
 </form>
-@endsection 
+@endsection

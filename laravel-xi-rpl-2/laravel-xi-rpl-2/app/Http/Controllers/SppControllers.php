@@ -51,9 +51,9 @@ class SppControllers extends Controller
      */
     public function edit(string $id)
     {
-        $tb_spps = DB::table('tb_spps')->where('tahun', $id)->first();
-        $tb_spps = DB::table('tb_spps')->where('nominal', $id)->first();
-        return view('spp.edit', compact('tb_spps'));
+        $tb_spps = DB::table('tb_spps')->where('tahun', $tahun)->first();
+        $tb_spps = DB::table('tb_spps')->where('nominal', $nominal)->first();
+        return view('spp.edit', compact('spp'));
     }
 
     /**

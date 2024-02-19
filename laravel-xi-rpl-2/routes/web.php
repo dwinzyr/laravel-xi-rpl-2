@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SppControllers;
-
+use App\Http\Controllers\KelassController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,3 +41,5 @@ Route::controller(SppControllers::class)->group(function () {
     Route::put('/spp/{spp}', 'update')->name('spp.update');
     Route::delete('/spp/{spp}', 'destroy')->name('spp.destroy');
 });
+
+route::resource('/kelass', KelassController::class);

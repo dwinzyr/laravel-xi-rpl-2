@@ -1,5 +1,5 @@
 @extends('index')
-@section('contentindex')
+@section('contentindexkelas')
 @forelse ($tb_spps as $key => $value)
               <tr>
                 <td>
